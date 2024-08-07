@@ -17,6 +17,8 @@ def load_raw_dataset(domain, config):
         paper_dataset = Dataset.from_pandas(pd.DataFrame(paper_df['title'] + ' '  + paper_df['tldr'], columns=['text']))
         return paper_dataset 
     elif domain == "recipe":
+        if not pathlib.Path(os.path.join(config.data_dir, 'full_datasets.csv')).exists():
+            raise ValueError(f'Check -> https://huggingface.co/mbien/recipenlg, download full_dataset.csv and put it into {config.data_dir}')
         recipe_raw_dataset = load_dataset("recipe_nlg", data_dir=config.data_dir, streaming=config.data_streaming)
         return recipe_raw_dataset 
 
