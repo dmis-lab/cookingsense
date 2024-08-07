@@ -2,6 +2,8 @@
 test/datasets
 test/datasets.zip
 
+test/datasets_all
+test/datasets_all.zip
 src/CookingSense/saved
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,python,git
