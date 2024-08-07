@@ -1,6 +1,7 @@
 import os
 import pickle
 
+
 class WordFilter:
     domain_set = (
         "ing-bio",
@@ -49,7 +50,6 @@ class WordFilter:
             with open(os.path.join(self.commons_path, "all_20230918.txt"), "r") as f:
                 return self._parse_txt(f, include_tab=False)
 
-
     def set_domain(self, domain):
         self.current_domain = domain
 
@@ -91,4 +91,3 @@ class WordFilter:
 
     def __repr__(self):
         return self.__str__()
-
