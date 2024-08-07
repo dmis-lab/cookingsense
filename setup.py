@@ -6,9 +6,9 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="CookingSense",  # Required
-    version="0.0.1",  # Required
-    description="CookingSense",  # Optional
+    name="cookingsense",  # Required
+    version="1.0.0",  # Required
+    description="cookingsense",  # Optional
     long_description=long_description,  # Optional
     long_description_content_type="text/markdown",  # Optional (see note above)
     url="https://github.com/dmis-lab/cookingsense",  # Optional
