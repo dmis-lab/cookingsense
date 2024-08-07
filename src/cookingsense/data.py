@@ -22,7 +22,7 @@ def load_raw_dataset(domain, config):
         return paper_dataset
     elif domain == "recipe":
         if not pathlib.Path(
-            os.path.join(config.data_dir, "full_datasets.csv")
+            os.path.join(config.data_dir, "full_dataset.csv")
         ).exists():
             raise ValueError(
                 f"Check -> https://huggingface.co/mbien/recipenlg, download full_dataset.csv and put it into {config.data_dir}"
