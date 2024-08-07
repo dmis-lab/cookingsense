@@ -1,4 +1,4 @@
-import CookingSense as cs
+import cookingsense as cs
 
 
 class config:
