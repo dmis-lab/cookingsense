@@ -11,7 +11,7 @@ conda activate cs
 pip install -r requirements.txt
 ```
 
-* Download [this file](https://www.dropbox.com/scl/fi/8d57dqcpkednslagtefly/datasets.zip?rlkey=b2yxheddrc997ljb52uzc3hze&st=15c4tyi7&dl=0) and extract to './test/'.
+* Download [this file](https://www.dropbox.com/scl/fi/v2f7zaym12yusacvbddhy/datasets.zip?rlkey=36x1rcwmyup7qb85eadv2ooe9&st=ny3tdq9i&dl=0) and extract to './test/'.
 * So, the directory should be 
 ```
 ./test/datasets
