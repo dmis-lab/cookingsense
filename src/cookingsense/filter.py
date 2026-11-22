@@ -1,4 +1,5 @@
 import spacy
+import torch
 from .filter_util import WordFilter
 from .generic_filter import is_generic
 
@@ -14,6 +15,7 @@ class Pipeline:
         self.config = config
         self.word_filter = WordFilter(config)
         self.nlp = spacy.load("en_core_web_sm")
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
         self.nli_checkpoint_path = (
             config.data_dir + "checkpoints/fine-tuned-bert-large/"
@@ -21,7 +23,7 @@ class Pipeline:
         self.nli_tokenizer = AutoTokenizer.from_pretrained(self.nli_checkpoint_path)
         self.nli_model = AutoModelForSequenceClassification.from_pretrained(
             self.nli_checkpoint_path
-        ).to("cuda")
+        ).to(self.device)
         self.nli_model.to_bettertransformer()
 
     def get_spacy_sentences(self, documents):
@@ -55,7 +57,7 @@ class Pipeline:
 
     def filter_semantic(self, sentences):
         inputs = self.nli_tokenizer(sentences, return_tensors="pt", padding=True).to(
-            "cuda"
+            self.device
         )
         nli_result = self.nli_model(**inputs)
 
