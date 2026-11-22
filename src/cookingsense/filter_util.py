@@ -25,7 +25,7 @@ class WordFilter:
             if include_tab:
                 lsp = l.split("\t")
                 if len(lsp) == 2:
-                    if len(lsp[0]) > 3:
+                    if lsp[0]:
                         res.append(lsp[0])
             else:
                 res.append(l.strip())
